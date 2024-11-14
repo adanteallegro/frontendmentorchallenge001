@@ -1,5 +1,8 @@
 body {
     background-color: hsl(212, 45%, 89%);
+    /*There has to be a better way to make the div table more centered 
+    than relying on pixels. I feel like there's a better way? Ask about this.*/
+    margin-top: 150px;
 }
 
 /* <uniquifier>: Use a unique and descriptive class name*/
@@ -11,20 +14,24 @@ body {
   font-weight: 700;
   font-style: normal;
   color: hsl(218, 44%, 22%);
+  padding: 20px;
 }
 
 .box {
     background-color: white;
-    width: 600px;
+    width: min-content;
     border-radius: 25px;
     margin: auto;
     text-align: center;
     padding: 20px;
-    padding-bottom: 100px;
+    
 }
 
 img {
 border-radius: 25px;
+/*There has to be a better way to resize this image rather than 
+giving it a set number of pixels. Look this up!*/
+width: 350px; 
 }
 
 p {
