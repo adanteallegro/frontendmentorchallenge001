@@ -1,7 +1,7 @@
 body {
     background-color: hsl(212, 45%, 89%);
-    /*There has to be a better way to make the div table more centered 
-    tn relying on pixels. I feel like there's a better way? Ask about this.*/
+    /*There has to be a better way to make the div table more centered height-wise
+    than relying on pixels. I feel like there's a better way? Ask about this.*/
     margin-top: 150px;
 }
 
