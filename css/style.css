@@ -1,27 +1,117 @@
-body {
-    background-color: hsl(212, 45%, 89%);
-    /*There has to be a better way to make the div table more centered height-wise
-    than relying on pixels. I feel like there's a better way? Ask about this.*/
-    margin-top: 150px;
+/*CSS Reset Time!! This is to reset the CSS.
+This is from https://piccalil.li/blog/a-more-modern-css-reset/*/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-/* <uniquifier>: Use a unique and descriptive class name*/
-/* <weight>: Use a value from 100 to 900*/
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
 
-.outfit, h2 {
-  font-family: "Outfit", sans-serif;
-  font-optical-sizing: auto;
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+
+
+/*And now back to this.*/
+body {
+    background-color: hsl(212, 45%, 89%);
+    padding: 16px;
+
+    /*Okay, this is the flexbox. The flexbox will ensure that the 
+    box will be centered both horizontally and vertically.
+    I have no idea how this works right now, but that's okay,
+    because that's what I'm going to focus on next!*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100svh;
+
+    /*Setting the font family here will ensure that all text will
+    have this font family, unless specified otherwirse.*/
+    font-family: "Outfit", sans-serif;
+}
+
+h2 {
   font-weight: 700;
-  font-style: normal;
   color: hsl(218, 44%, 22%);
   padding: 20px;
+  /*Setting the margin as 0 for both headings and paragraphs will remove the default margin from
+  the browser! We can control the spacing a bit better now.*/
+  margin: 0;
 }
 
 .box {
     background-color: white;
-    width: min-content;
+    /*The max-width is at 20 rem, so that way, the box isn't 
+    too large on larger screens.*/
+    max-width: 20rem;
     border-radius: 25px;
-    margin: auto;
     text-align: center;
     padding: 20px;
     
@@ -29,16 +119,16 @@ body {
 
 img {
 border-radius: 25px;
-/*There has to be a better way to resize this image rather than 
-giving it a set number of pixels. Look this up!*/
-width: 350px; 
+/*These next few commands are here to make sure that
+the image does not overflow and spill out of the box.
+Max-width specifically makes the image shrink to fit inside the box.*/
+display: block;
+height: auto;
+max-width: 100%;
 }
 
 p {
-    font-family: "Outfit", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1rem;
+    /*Paragraphs have a default font weight of 400.*/
     color: hsl(216, 15%, 48%);
+    margin: 0;
 }
